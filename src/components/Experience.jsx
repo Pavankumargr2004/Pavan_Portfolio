@@ -49,21 +49,33 @@ export default function Experience() {
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-[1.2fr,1fr] gap-12 md:gap-24 mt-16">
-          {/* Left Column: Timeline Tracks */}
-          <div className="space-y-2">
-            {TRACK.map((exp, i) => (
-              <div 
-                key={i} 
-                className="group relative pl-6 py-6 border-b border-[#1A1814]/12 transition-[padding-left] duration-200 hover:pl-8 before:content-[''] before:absolute before:left-0 before:top-8 before:w-1.5 before:h-1.5 before:rounded-full before:bg-[#1A1814]/12 before:transition-all before:duration-200 hover:before:bg-[#0047FF] hover:before:scale-150"
-              >
-                <div className="font-mono text-[11px] tracking-wider text-[#0047FF] mb-2">{exp.era}</div>
-                <div className="font-sans text-lg font-bold text-[#1A1814] mb-1 group-hover:text-[#0047FF] transition-colors duration-200">
-                  {exp.desk}
+          {/* Left Column: Timeline Tracks Container */}
+          <div className="relative pl-6">
+            {/* Continuous Line Track */}
+            <div className="absolute left-0 top-8 bottom-8 w-[1px] bg-[#1A1814]/12" />
+
+            <div className="space-y-2">
+              {TRACK.map((exp, i) => (
+                <div 
+                  key={i} 
+                  className="group relative py-6 border-b border-[#1A1814]/12 transition-[padding-left] duration-300 hover:pl-4"
+                >
+                  {/* Timeline Anchor Node Indicator */}
+                  <div className="absolute -left-6 top-8 -translate-x-1/2 flex items-center justify-center">
+                    <div className="w-2 h-2 rounded-full bg-[#1A1814]/24 border-2 border-[#F5F0E8] transition-all duration-300 z-10 group-hover:bg-[#0047FF] group-hover:scale-125" />
+                    {/* Subtle outer ping glow on active focus layout */}
+                    <div className="absolute w-4 h-4 rounded-full bg-[#0047FF]/0 transition-all duration-300 group-hover:bg-[#0047FF]/10 group-hover:scale-150" />
+                  </div>
+
+                  <div className="font-mono text-[11px] tracking-wider text-[#0047FF] mb-2">{exp.era}</div>
+                  <div className="font-sans text-lg font-bold text-[#1A1814] mb-1 group-hover:text-[#0047FF] transition-colors duration-200">
+                    {exp.desk}
+                  </div>
+                  <div className="font-mono text-xs text-[#6B6560] mb-3 font-semibold">{exp.space}</div>
+                  <div className="font-mono text-xs leading-relaxed text-[#6B6560] max-w-xl">{exp.item}</div>
                 </div>
-                <div className="font-mono text-xs text-[#6B6560] mb-3 font-semibold">{exp.space}</div>
-                <div className="font-mono text-xs leading-relaxed text-[#6B6560] max-w-xl">{exp.item}</div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
 
           {/* Right Column: Title & Awards */}

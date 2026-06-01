@@ -15,6 +15,7 @@ import Certifications from './components/Certifications';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import Education from './components/Education';
+// import Gallery from './components/Gallery';
 
 export default function App() {
   const [loading, setLoading] = useState(true);
@@ -82,7 +83,9 @@ export default function App() {
             <Experience />
             <Certifications />
             <Contact />
+            {/* <Gallery /> */}
           </main>
+          
           <Footer />
         </div>
       )}

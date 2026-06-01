@@ -26,7 +26,7 @@ export default function About() {
         <div className="grid grid-cols-2 gap-[1px] bg-[#1A1814]/12 mt-12 border border-[#1A1814]/12 reveal">
           {[
             { metric: '9.05', label: 'B.Tech CGPA' },
-            { metric: '10+', label: 'Projects Shipped' },
+            { metric: '10+', label: 'Projects Built' },
             { metric: '02', label: 'Research Papers' },
             { metric: '06', label: 'Certifications' }
           ].map((stat, i) => (

@@ -30,7 +30,7 @@ export default function Navbar() {
         </a>
         
         <ul className="hidden md:flex gap-10 list-none">
-          {['About', 'Projects', 'Research', 'Experience', 'Contact'].map((item) => (
+          {['About', 'Projects', 'Research', 'Experience', 'Contact','Gallery'].map((item) => (
             <li key={item}>
               <a
                 href={`#${item.toLowerCase()}`}

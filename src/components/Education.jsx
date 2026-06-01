@@ -1,33 +1,27 @@
 import React from 'react';
 
 const EDUCATION_DETAILS = {
-  institution: "Dayananda Sagar University",
-  location: "Bengaluru, Karnataka, India",
-  degree: "B.Tech in Computer Science and Engineering",
-  timeline: "2023 — Present",
-  metrics: [
-    { label: "Cumulative CGPA", value: "9.05 / 10" },
-    { label: "Current Standing", value: "Undergraduate Active" }
-  ],
+  degree: {
+    institution: "Dayananda Sagar University",
+    location: "Bengaluru, Karnataka, India",
+    stream: "B.Tech in Computer Science and Engineering",
+    timeline: "2023 — Present",
+    metric: "9.05 / 10 CGPA",
+  },
   preUniversity: {
     institution: "SDC Independent PU College",
+    location: "Mulbagal, Karnataka, India",
     stream: "PCMB (Physics, Chemistry, Mathematics, Biology)",
     timeline: "2020 — 2022",
     metric: "93%"
   },
   secondarySchool: {
     institution: "Adarsha Vidyalaya",
+    location: "Thathikallu, Mulbagal, Karnataka, India",
     stream: "General Secondary Education (10th Grade)",
-    timeline: "2020", // Updated timeline
-    metric: "90.56%"  // Added your score
-  },
-  coreTracks: [
-    "Artificial Intelligence & Deep Learning (TensorFlow, CNN, NLP)",
-    "Explainable AI & Fair Machine Learning (SHAP, LIME)",
-    "Full-Stack Engineering (ReactJS, NodeJS, ExpressJS, FastAPI)",
-    "Data Structures & Algorithms, DBMS, and Operating Systems",
-    "Cloud Computing Foundations & Workflow Automation (n8n)"
-  ]
+    timeline: "2020",
+    metric: "90.56%"
+  }
 };
 
 export default function Education() {
@@ -54,110 +48,108 @@ export default function Education() {
             </p>
           </div>
 
-          {/* Right Column: Content Blocks */}
-          <div className="lg:col-span-2 space-y-16 mt-4 lg:mt-0 w-full">
+          {/* Right Column: Content Blocks with Timeline Spine */}
+          <div className="lg:col-span-2 relative pl-8 mt-4 lg:mt-0 w-full">
             
-            {/* Undergraduate Degree Block */}
-            <div className="reveal border-b border-[#1A1814]/12 pb-12 group">
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
-                <div>
-                  <span className="font-mono text-[10px] text-[#0047FF] uppercase tracking-widest block mb-1 font-semibold">
-                    Undergraduate Program
-                  </span>
-                  <h3 className="font-sans text-xl sm:text-2xl font-bold text-[#1A1814] group-hover:text-[#0047FF] transition-colors duration-200 tracking-tight leading-snug">
-                    {EDUCATION_DETAILS.institution}
-                  </h3>
-                  <div className="font-mono text-xs text-[#6B6560] mt-1">
-                    {EDUCATION_DETAILS.location}
-                  </div>
-                </div>
-                
-                <div className="w-fit font-mono text-xs font-bold text-[#0047FF] bg-[#1A1814]/4 px-3 py-1 border border-[#1A1814]/5 rounded-sm whitespace-nowrap">
-                  {EDUCATION_DETAILS.timeline}
-                </div>
-              </div>
+            {/* Continuous Line Track */}
+            <div className="absolute left-0 top-2 bottom-2 w-[1px] bg-[#1A1814]/12" />
 
-              <h4 className="font-sans text-base font-semibold text-[#1A1814]/80 mb-6 leading-normal">
-                {EDUCATION_DETAILS.degree}
-              </h4>
-
-              {/* CGPA & Academic Status Badges */}
-              <div className="grid grid-cols-2 gap-4 max-w-xs mb-8 bg-white border border-[#1A1814]/12 p-4 rounded-sm shadow-sm">
-                {EDUCATION_DETAILS.metrics.map((metric, i) => (
-                  <div key={i} className="space-y-0.5">
-                    <div className="font-mono text-[10px] uppercase text-[#6B6560] tracking-wider break-words">{metric.label}</div>
-                    <div className="font-mono text-sm font-bold text-[#1A1814]">{metric.value}</div>
-                  </div>
-                ))}
-              </div>
-
-              {/* Core Specialized Focus Tracks */}
-              <div className="pt-6 border-t border-[#1A1814]/6">
-                <h5 className="font-sans text-xs font-bold uppercase tracking-wider text-[#1A1814] mb-4">
-                  Core Curricular Competencies
-                </h5>
-                <ul className="list-none m-0 p-0 space-y-3">
-                  {EDUCATION_DETAILS.coreTracks.map((focus, i) => (
-                    <li key={i} className="font-mono text-xs text-[#6B6560] flex items-start gap-2.5 leading-relaxed">
-                      <span className="text-[#0047FF] select-none mt-0.5">▪</span>
-                      <span>{focus}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-
-            {/* Higher Secondary / Pre-University Block */}
-            <div className="reveal border-b border-[#1A1814]/12 pb-12 group">
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
-                <div>
-                  <span className="font-mono text-[10px] text-[#0047FF] uppercase tracking-widest block mb-1 font-semibold">
-                    Higher Secondary Education
-                  </span>
-                  <h3 className="font-sans text-xl font-bold text-[#1A1814] group-hover:text-[#0047FF] transition-colors duration-200 tracking-tight leading-snug">
-                    {EDUCATION_DETAILS.preUniversity.institution}
-                  </h3>
-                  <div className="font-mono text-xs text-[#6B6560] mt-1">
-                    {EDUCATION_DETAILS.preUniversity.stream}
-                  </div>
-                </div>
-                
-                <div className="font-mono text-xs font-bold text-[#6B6560] whitespace-nowrap">
-                  {EDUCATION_DETAILS.preUniversity.timeline}
-                </div>
-              </div>
-
-              <div className="font-mono text-xs text-[#6B6560]">
-                Final Matriculation Score: <strong className="text-[#1A1814] font-bold">{EDUCATION_DETAILS.preUniversity.metric}</strong>
-              </div>
-            </div>
-
-            {/* Adarsha Vidyalaya Block */}
-            <div className="reveal pb-4 group">
-              <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
-                <div>
-                  <span className="font-mono text-[10px] text-[#0047FF] uppercase tracking-widest block mb-1 font-semibold">
-                    Secondary Education
-                  </span>
-                  <h3 className="font-sans text-xl font-bold text-[#1A1814] group-hover:text-[#0047FF] transition-colors duration-200 tracking-tight leading-snug">
-                    {EDUCATION_DETAILS.secondarySchool.institution}
-                  </h3>
-                  <div className="font-mono text-xs text-[#6B6560] mt-1">
-                    {EDUCATION_DETAILS.secondarySchool.stream}
-                  </div>
-                </div>
-                
-                <div className="font-mono text-xs font-bold text-[#6B6560] whitespace-nowrap">
-                  {EDUCATION_DETAILS.secondarySchool.timeline}
-                </div>
-              </div>
+            <div className="space-y-16">
               
-              {/* Added Final Metric Display for 10th Grade */}
-              <div className="font-mono text-xs text-[#6B6560]">
-                Final Matriculation Score: <strong className="text-[#1A1814] font-bold">{EDUCATION_DETAILS.secondarySchool.metric}</strong>
-              </div>
-            </div>
+              {/* Undergraduate Degree Block */}
+              <div className="reveal relative border-b border-[#1A1814]/12 pb-12 group transition-all duration-300 hover:pl-2">
+                {/* Timeline Anchor Node Indicator */}
+                <div className="absolute -left-8 top-1.5 -translate-x-1/2 flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-[#1A1814]/24 border-2 border-[#FAF7F2] transition-all duration-300 z-10 group-hover:bg-[#0047FF] group-hover:scale-125" />
+                  <div className="absolute w-4 h-4 rounded-full bg-[#0047FF]/0 transition-all duration-300 group-hover:bg-[#0047FF]/10 group-hover:scale-150" />
+                </div>
 
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
+                  <div>
+                    <span className="font-mono text-[10px] text-[#0047FF] uppercase tracking-widest block mb-2 font-semibold">
+                      Undergraduate Program
+                    </span>
+                    <h3 className="font-sans text-xl sm:text-2xl font-bold text-[#1A1814] group-hover:text-[#0047FF] transition-colors duration-200 tracking-tight leading-snug">
+                      {EDUCATION_DETAILS.degree.institution}
+                    </h3>
+                    <div className="font-mono text-xs text-[#6B6560] mt-1.5 leading-relaxed">
+                      {EDUCATION_DETAILS.degree.stream} &bull; {EDUCATION_DETAILS.degree.location}
+                    </div>
+                  </div>
+                  
+                  <div className="w-fit font-mono text-xs font-bold text-[#6B6560] whitespace-nowrap sm:pt-1">
+                    {EDUCATION_DETAILS.degree.timeline}
+                  </div>
+                </div>
+
+                <div className="font-mono text-xs text-[#6B6560]">
+                  Cumulative Standing: <strong className="text-[#1A1814] font-bold">{EDUCATION_DETAILS.degree.metric}</strong>
+                </div>
+              </div>
+
+              {/* Higher Secondary / Pre-University Block */}
+              <div className="reveal relative border-b border-[#1A1814]/12 pb-12 group transition-all duration-300 hover:pl-2">
+                {/* Timeline Anchor Node Indicator */}
+                <div className="absolute -left-8 top-1.5 -translate-x-1/2 flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-[#1A1814]/24 border-2 border-[#FAF7F2] transition-all duration-300 z-10 group-hover:bg-[#0047FF] group-hover:scale-125" />
+                  <div className="absolute w-4 h-4 rounded-full bg-[#0047FF]/0 transition-all duration-300 group-hover:bg-[#0047FF]/10 group-hover:scale-150" />
+                </div>
+
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
+                  <div>
+                    <span className="font-mono text-[10px] text-[#0047FF] uppercase tracking-widest block mb-2 font-semibold">
+                      Higher Secondary Education
+                    </span>
+                    <h3 className="font-sans text-xl font-bold text-[#1A1814] group-hover:text-[#0047FF] transition-colors duration-200 tracking-tight leading-snug">
+                      {EDUCATION_DETAILS.preUniversity.institution}
+                    </h3>
+                    <div className="font-mono text-xs text-[#6B6560] mt-1.5 leading-relaxed">
+                      {EDUCATION_DETAILS.preUniversity.stream} &bull; {EDUCATION_DETAILS.preUniversity.location}
+                    </div>
+                  </div>
+                  
+                  <div className="font-mono text-xs font-bold text-[#6B6560] whitespace-nowrap sm:pt-1">
+                    {EDUCATION_DETAILS.preUniversity.timeline}
+                  </div>
+                </div>
+
+                <div className="font-mono text-xs text-[#6B6560]">
+                  Final Matriculation Score: <strong className="text-[#1A1814] font-bold">{EDUCATION_DETAILS.preUniversity.metric}</strong>
+                </div>
+              </div>
+
+              {/* Secondary School Block */}
+              <div className="reveal relative pb-4 group transition-all duration-300 hover:pl-2">
+                {/* Timeline Anchor Node Indicator */}
+                <div className="absolute -left-8 top-1.5 -translate-x-1/2 flex items-center justify-center">
+                  <div className="w-2 h-2 rounded-full bg-[#1A1814]/24 border-2 border-[#FAF7F2] transition-all duration-300 z-10 group-hover:bg-[#0047FF] group-hover:scale-125" />
+                  <div className="absolute w-4 h-4 rounded-full bg-[#0047FF]/0 transition-all duration-300 group-hover:bg-[#0047FF]/10 group-hover:scale-150" />
+                </div>
+
+                <div className="flex flex-col sm:flex-row sm:justify-between sm:items-start gap-4 mb-4">
+                  <div>
+                    <span className="font-mono text-[10px] text-[#0047FF] uppercase tracking-widest block mb-2 font-semibold">
+                      Secondary Education
+                    </span>
+                    <h3 className="font-sans text-xl font-bold text-[#1A1814] group-hover:text-[#0047FF] transition-colors duration-200 tracking-tight leading-snug">
+                      {EDUCATION_DETAILS.secondarySchool.institution}
+                    </h3>
+                    <div className="font-mono text-xs text-[#6B6560] mt-1.5 leading-relaxed">
+                      {EDUCATION_DETAILS.secondarySchool.stream} &bull; {EDUCATION_DETAILS.secondarySchool.location}
+                    </div>
+                  </div>
+                  
+                  <div className="font-mono text-xs font-bold text-[#6B6560] whitespace-nowrap sm:pt-1">
+                    {EDUCATION_DETAILS.secondarySchool.timeline}
+                  </div>
+                </div>
+                
+                <div className="font-mono text-xs text-[#6B6560]">
+                  Final Matriculation Score: <strong className="text-[#1A1814] font-bold">{EDUCATION_DETAILS.secondarySchool.metric}</strong>
+                </div>
+              </div>
+
+            </div>
           </div>
 
         </div>

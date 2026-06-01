@@ -24,11 +24,10 @@ export default function Hero() {
             <div className="overflow-hidden"><span className="title-line block">Pavan Kumar</span></div>
             <div className="overflow-hidden"><span className="title-line block"><em className="font-serif font-light italic text-[#0047FF]">G R</em></span></div>
           </h1>
-
-          <div className="hero-bottom reveal mt-12">
-            <div className="font-mono text-[13px] leading-relaxed text-[#6B6560] max-w-[360px]">
-              Building data pipelines, intelligent architectures, and interfaces at the intersection of <strong className="text-[#1A1814]">Scalable Code &amp; Deep Learning.</strong>
-            </div>
+             <div className="hero-bottom reveal mt-12">
+               <div className="font-mono text-[13px] leading-relaxed text-[#6B6560] max-w-[360px]">
+                 Passionate Computer Science student building modern web applications, exploring Artificial Intelligence, and creating innovative solutions using <strong className="text-[#1A1814]">React.js, Full-Stack Development &amp; AI Technologies.</strong>
+                   </div>
             
             {/* CTA & Status Container */}
             <div className="flex flex-wrap items-center gap-4 mt-6">
