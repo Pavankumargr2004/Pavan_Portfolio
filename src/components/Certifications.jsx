@@ -22,10 +22,16 @@ const CERTS = [
     link: 'https://drive.google.com/file/d/1HAfflNgIgEfYFb8LJsJ0sVcCa6mSsrMo/view'
   },
   { 
-    title: 'MathWorks Deep Learning Onramp', 
-    issuer: 'MathWorks',
-    link: 'https://drive.google.com/file/d/1d_fe6DDH_3KfePGlu5ObsmF8TWPwfIzV/view?usp=drive_link'
-  }
+    title: 'Networking Basics', 
+    issuer: 'CISCO Networking Academy',
+    link: 'https://drive.google.com/file/d/1e_dI7mz0FA-4-30rxRD6E79APeODBYBd/view'
+  }, 
+   { 
+    title: 'Access More Certificates Here', 
+    link: 'https://drive.google.com/drive/folders/1-T79sJNMjVFecMfo28mCG1N31aSB7coq?usp=sharing'
+  },
+
+
 ];
 
 export default function Certifications() {

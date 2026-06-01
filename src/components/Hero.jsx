@@ -29,10 +29,35 @@ export default function Hero() {
             <div className="font-mono text-[13px] leading-relaxed text-[#6B6560] max-w-[360px]">
               Building data pipelines, intelligent architectures, and interfaces at the intersection of <strong className="text-[#1A1814]">Scalable Code &amp; Deep Learning.</strong>
             </div>
-            <div className="flex items-center gap-2 font-mono text-[11px] tracking-wider text-[#1A1814] px-4 py-2 border border-[#1A1814]/12 bg-[#F5F0E8] mt-6 inline-flex">
-              <div className="w-2 h-2 rounded-full bg-[#22c55e] animate-[pulse_2s_infinite]" />
-              Dayananda Sagar University — B.Tech CSE
+            
+            {/* CTA & Status Container */}
+            <div className="flex flex-wrap items-center gap-4 mt-6">
+              {/* University Status */}
+              <div className="flex items-center gap-2 font-mono text-[11px] tracking-wider text-[#1A1814] px-4 py-2 border border-[#1A1814]/12 bg-[#F5F0E8]">
+                <div className="w-2 h-2 rounded-full bg-[#22c55e] animate-[pulse_2s_infinite]" />
+                Dayananda Sagar University — B.Tech CSE
+              </div>
+
+              {/* View CV Button */}
+              <a 
+                href="https://drive.google.com/drive/folders/14nTc1cUdjfLuhDBF6-uLm1Gku-go8g5r?usp=drive_link" 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="group flex items-center gap-2 font-mono text-[11px] tracking-widest uppercase text-[#F5F0E8] bg-[#1A1814] px-5 py-2 transition-all duration-300 hover:bg-[#0047FF]"
+              >
+                View CV
+                <svg 
+                  className="w-3 h-3 transform transition-transform duration-300 group-hover:translate-x-1" 
+                  fill="none" 
+                  viewBox="0 0 24 24" 
+                  stroke="currentColor" 
+                  strokeWidth={2}
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                </svg>
+              </a>
             </div>
+
           </div>
         </div>
 
