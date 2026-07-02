@@ -39,7 +39,7 @@ export default function Hero() {
 
               {/* View CV Button */}
               <a 
-                href="https://drive.google.com/drive/folders/14nTc1cUdjfLuhDBF6-uLm1Gku-go8g5r?usp=drive_link" 
+                href="https://drive.google.com/file/d/1pYXE6tmjT7QtMSF2_Jd3C2itDEJqwgaE/view?usp=sharing" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="group flex items-center gap-2 font-mono text-[11px] tracking-widest uppercase text-[#F5F0E8] bg-[#1A1814] px-5 py-2 transition-all duration-300 hover:bg-[#0047FF]"
